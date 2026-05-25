@@ -1,0 +1,46 @@
+show databases
+admin   40.00 KiB
+config  12.00 KiB
+local   64.00 KiB
+show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   64.00 KiB
+use vit
+switched to db vit
+db
+vit
+db.dropDatabase()
+{ ok 1, dropped 'vit' }
+show databases
+admin   40.00 KiB
+config  12.00 KiB
+local   64.00 KiB
+use vit
+already on db vit
+show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   64.00 KiB
+db
+vit
+db
+vit
+db.createCollection("Student")
+{ ok: 1 }
+show collections
+Student
+db.Student.drop()
+true
+show collections
+db.createCollection("Employee")
+show collections
+Employee
+show databases
+admin   40.00 KiB
+config  92.00 KiB
+local   64.00 KiB
+vit      8.00 KiB
+db.Employee.insert({name:'Jayanth', department: 'ECE' })
+db.Employee.insert({name:'Tamil', marks:90, location: ' chennai'})
+db.Employee.find()
