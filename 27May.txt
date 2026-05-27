@@ -1,0 +1,52 @@
+db.products.find({
+   price: {$eq: 899}
+})
+db.products.find({
+   price: {$ne: 899}
+})
+db.products.find({
+   price: {$gt:700}
+})
+db.products.find({
+   price: {$gte:799}
+})
+db.products.find({
+   price: {$lt:800}
+})
+db.products.find({
+   price: {$lte:699}
+})
+db.products.find({
+   price: {$in:[599,699]}
+})
+db.products.find({
+   price: {$nin:[599,699]}
+})
+db.products.find({
+   $and:[
+      {price:{$gt:700}},
+      {"spec.ram":{$gt:8}}
+   ]
+})
+db.products.find({
+   $or:[
+      {price:599},
+      {"spec.ram":16}
+   ]
+})
+db.products.find({
+   price:{
+      $not:{$gt:800}
+   }
+})
+db.products.find({
+   $nor:[
+      {price:899},
+      {color:"gold"}
+   ]
+},
+{
+   name:1,
+   price:1,
+   color:1
+})
